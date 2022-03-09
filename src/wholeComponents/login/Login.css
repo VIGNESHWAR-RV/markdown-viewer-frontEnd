@@ -1,0 +1,91 @@
+
+.loginForm{
+    width:90%;
+    color:black;
+    background: darkred;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: oblique;
+    letter-spacing: 1px;
+    display:grid;
+    align-content: center;
+    justify-items:stretch; 
+}
+
+.loginHeading{
+   margin: 0;
+   font-size:4.5vmax;
+   letter-spacing: 2px;
+   text-align: center;
+   text-transform:uppercase;
+   text-decoration: underline;
+}
+
+.loginSubmit{
+    border:none;
+    width:100%;
+    margin:3% 0;
+    padding:2.5%;
+    border-radius: 10px;
+    font-family: inherit;
+    font-style: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.06vw;
+    font-size: 1.8vmax;
+    cursor: pointer;
+    background: rgb(114, 2, 2);
+    color:rgb(243, 201, 201);
+    transition: all 0.1s ease-in-out;
+}
+.loginSubmit:hover{
+    background: black;
+    color:darkred;
+}
+
+.loginError{
+    border:2px solid black;
+    background: red;
+    color:white;
+    padding:2%;
+    border-radius: 20px;
+    font-size: 1.2vmax;
+    display: block;
+    text-transform: capitalize;
+}
+.loginAnchorsDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:1rem;
+}
+.loginAnchors{
+    border:none;
+    padding:1%;
+    background: transparent;
+    border-radius: 10px;
+    color:black;
+    font-size: 1.2vmax;
+    text-decoration: underline;
+    transform: scale(1.2);
+    font-style: inherit;
+    font-family: inherit;
+    transition: all 0.1s ease-in-out;
+}
+.loginAnchors:hover{
+    box-shadow: 0.1vw 0.1vw 0.5vw black,-0.1vw -0.1vw 0.5vw black;
+}
+
+
+@media only screen and (max-width: 800px){
+   .loginHeading{
+       font-size: 8vmin;
+   }
+   .loginSubmit{
+       font-size: 4vmin;
+   }
+   .loginAnchorsDiv{
+       flex-direction: column;
+   }
+   .loginAnchors{
+       font-size: 3.5vmin;
+   }
+}

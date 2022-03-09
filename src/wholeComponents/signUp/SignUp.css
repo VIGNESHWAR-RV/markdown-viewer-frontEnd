@@ -1,0 +1,106 @@
+.signUpHeading{
+    font-size:3.6vmax;
+    text-align: center;
+    text-transform:uppercase;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: oblique;
+    text-decoration: underline;
+    letter-spacing: 0.1vw;
+    padding: 3%;
+    margin:0;
+ }
+
+.signUpOuterDiv{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    overflow-y:auto ;
+    display:grid;
+    grid-template-rows:1fr;
+    place-items: center;
+}
+.signUpForm{
+    width:90%;
+    /* padding:0 0 0 0; */
+    color: black;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.15vw;
+    font-style: oblique;
+    /* animation: form-fade-in 1.5s ease-in-out;  */
+    display:grid;
+}  
+/* @keyframes form-fade-in {
+    from {
+      opacity:0;
+    }
+    to {
+     opacity:1;
+    }
+} */
+
+.signUpSubmit{
+    border:none;
+    width:100%;
+    margin:5% 0;
+    padding:2.5%;
+    border-radius: 10px;
+    font-family: inherit;
+    font-style: inherit;
+    text-transform: uppercase;
+    font-size: 2vmax;
+    cursor: pointer;
+    background: rgb(114, 2, 2);
+    color:rgb(243, 201, 201);
+    transition: all 0.1s ease-in-out;
+}
+   
+.signUpSubmit:hover{
+     background: black;
+     color:darkred;
+}
+
+.signUpAnchorsDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.signUpAnchors{
+    border:none;
+    padding:1%;
+    background: transparent;
+    border-radius: 10px;
+    color: black;
+    font-size: 1.5vmax;
+    font-style: inherit;
+    font-family: inherit;
+    text-decoration: underline;
+    /* transform: scale(1.2); */
+}
+.signUpAnchorText{
+    font-size: 2vmax;
+    letter-spacing: 0.1vw;
+    /* transform: scale(1.2); */
+}
+.signUpAnchors:hover{
+    box-shadow: 0.1vw 0.1vw 0.5vw black,-0.1vw -0.1vw 0.5vw black;
+    color:darkred;
+}
+
+
+@media only screen and (max-width: 800px){
+   .signUpHeading{
+       font-size: 7vmin;
+   }
+   .signUpSubmit{
+       font-size: 4vmin;
+   }
+   .signUpAnchorsDiv{
+       flex-direction: column;
+   }
+   .signUpAnchors{
+       font-size: 3.5vmin;
+   }
+   .signUpAnchorText{
+       font-size: 4vmin;
+   }
+}

@@ -1,0 +1,121 @@
+.loginSignUpDiv{
+    width:100%;
+    height:100vh;
+    animation: vertical-slide-in 0.6s ease-in-out;
+    overflow: hidden; 
+}
+@keyframes vertical-slide-in {
+    from {
+      height:0;
+    }
+    to {
+     height: 100%;
+    }
+}
+
+.loginSignUpOuterDiv{
+    width:100%;
+    height:100vh;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.loginInnerDiv,.signUpInnerDiv{
+    width: 100%;
+    height:100%;
+    display:grid;
+    border:none;
+    align-items: center;
+    transition: all 0.6s ease-in-out;
+}
+.loginInnerDiv{
+    border-right: 5px solid darkred;
+}
+.signUpInnerDiv{
+    border-left: 5px solid darkred;
+}
+.loginSelection{
+    justify-self: right;
+}
+.signUpSelection{
+    justify-self: left;
+}
+.signUpSelection,.loginSelection{
+    border: none;
+    margin: 2%;
+    padding:2.5vmax;
+    font-size: 3.6vmax;
+    text-transform: uppercase;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: oblique;
+    letter-spacing: 1.5px;
+    background: transparent;
+    color:darkred;
+    border-radius: 2vmax;
+    transition: all 0.6s ease-in-out;
+}
+.loginSelection:hover,.signUpSelection:hover{
+    color:black;
+    background: darkred;
+    
+}
+.loginOuterForm,.signUpOuterForm{
+    position: fixed;
+    width:100%;
+    height: 100%;
+    z-index: 2;
+    transition: all 0.6s ease-in-out;
+    background:darkred;
+    overflow:hidden;
+    display:grid;
+    place-items: center;
+}
+.loginOuterForm{
+    width:50%;
+}
+.signUpOuterForm{
+    width:50%;
+}
+.forgotPasswordOuterForm{
+    position: fixed;
+    width:50%;
+    height: 100%;
+    z-index: 2;
+    transition: all 0.6s ease-in-out;
+    background:darkred;
+    overflow:hidden;
+    display:grid;
+    place-items: center;
+}
+@media only screen and (max-width: 768px){
+    .loginSignUpOuterDiv{
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+    .loginOuterForm{
+        margin-bottom: 52vh;
+        width:100%;
+        height:100%;
+    }
+    .signUpOuterForm{
+        margin-top: 52vh;
+        width:100%;
+        height:100%;
+    }
+    .forgotPasswordOuterForm{
+        margin-bottom: 52vh;
+        width: 100%;
+        height: 100%;
+    }
+    .loginInnerDiv,.signUpInnerDiv{
+        border: 2px solid red;
+    }
+    .loginSelection,.signUpSelection{
+        border: 2px solid red;
+        background: darkred;
+        justify-self: center;
+    }
+   
+}

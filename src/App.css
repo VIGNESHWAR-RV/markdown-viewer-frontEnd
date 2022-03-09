@@ -1,0 +1,83 @@
+
+html{
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+  width:6px;
+  height:6px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+  
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0.336);
+}
+.App{
+  background: black;
+  height:100vh;
+  width:100%;
+  overflow: hidden;
+}
+.menuBar{
+  position:absolute;
+  top:1vw;
+  left:1.5vw;
+  font-size: 3vmax;
+  border:none;
+  color:red;
+  background: transparent;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.3s ease-in-out;
+}
+.menuBar:hover{
+  padding-top: 0.2%;
+  padding-left:0.5%;
+  text-shadow: 0.1vw 0.1vw 0.8vw #db0510,-0.1vw -0.1vw 0.8vw #db0510 ;
+}
+.themeButton{
+  position: absolute;
+  top:1.8vw;
+  right:1.5vw;
+  width:3vmax;
+  height:3vmax;
+  border-radius: 1.5vmax;
+  background: transparent;
+  font-size:1.5vmax;
+  border: 2px solid #db0510;
+  z-index: 5;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.themeButton:hover{
+  margin-top: 0.2%;
+  margin-right:0.3%;
+ box-shadow: 2px 2px 15px #db0510,-2px -2px 15px #db0510 ;
+}
+@media only screen and (max-width: 1100px){
+  .menuBar{
+    top:2%;
+    left:2%;
+    font-size: 6vmin;
+  }
+  .themeButton{
+    top:3%;
+    right:2%;
+    width:min-content;
+    height: min-content;
+    font-size: 4vmin;
+    border-radius: 6vmin;
+  }
+
+}
+@media only screen and (max-width: 768px){
+ 
+   .menuBar{
+     font-size: 8vmin;
+   }
+   .themeButton{
+     font-size: 5vmin;
+     
+   }
+}

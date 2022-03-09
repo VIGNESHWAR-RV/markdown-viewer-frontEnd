@@ -1,0 +1,168 @@
+.markdownCoverDiv{
+    width:100%;
+    height:100vh;
+    animation: vertical-slide-up 0.5s ease-in-out; 
+}
+@keyframes vertical-slide-up {
+    from {
+      margin-top:100%;
+    }
+    to {
+     height: 0%;
+    }
+}
+.header{
+    height:12.5vh;
+    background: transparent;
+  }
+  
+  .headerDiv,.markdown_Header_Div{
+    width:100%;
+    height:100%;
+    display:grid;
+    place-items: center;
+  }
+  .headerDiv{
+    grid-template-columns: 1fr;
+  }
+  
+  .title,.markdownInputTitle,.markdownPreviewTitle{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size:2vmax;
+    font-style: oblique;
+    margin:0;
+  }
+  .title{
+    color: darkred;
+    font-size: 3vmax;
+  }
+  .markdown_Header_Div{
+     display: flex;
+     padding-left: 2%;
+  }
+  .markdown_Header_Div div{
+     margin-left: 65%;
+  }
+  .markdown_Header_Div button{
+      border:none;
+      background: transparent;
+  }
+  .markdown_Header_Div a{
+    font-size: 2.5vmax;
+    background: grey;
+    -webkit-background-clip:text;
+    background-clip: text;
+    color:transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  .markdown_Header_Div a:hover{
+    text-shadow: 0vw 0vw 0.05vw red,-0vw -0vw 0.05vw red ;
+  }
+
+  .main{
+    height:77.5vh;
+    background:	darkred;
+    margin:0 1%;
+    width:98%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 25px;
+    overflow:hidden;
+  }
+  .markdownInputOuterDiv,.markdownPreviewOuterDiv{
+    width:98%;
+    height:97.5%;
+    padding: 1%;
+    overflow:hidden;
+    display:grid;
+    grid-template-rows: 0.5fr 5fr;
+  }
+  
+  .inputInnerDiv{
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.548);
+    border-radius: 25px;
+    display: grid;
+    place-items: center;
+  }
+  
+  .inputTextArea{
+    margin:2%;
+    padding:1%;
+    border:none;
+    height: 95%;
+    width:96%;
+    color:whitesmoke;
+    background: transparent;
+    font-size:1.68vmax;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.6px;
+    caret-color: red;
+  }
+  .inputTextArea:focus{
+   outline: none;
+  }
+  
+  .previewInnerDiv{
+    overflow: auto;
+    border-radius: 25px;
+    background: rgba(128, 128, 128, 0.53);
+  }
+  .previewDarkDiv,.previewWhiteDiv{
+    width: 96%;
+    height:94.8%;
+    padding:2%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:1.68vmax;
+    letter-spacing: 0.6px;
+  }
+  .previewDarkDiv{
+    color:"black";
+  }
+  .previewWhiteDiv{
+    color:rgb(243, 201, 201);
+  }
+  
+  .footer{
+     height:10vh;
+     background: transparent;
+  }
+  
+  .footerDiv{
+    width:100%;
+    height:100%;
+    display: grid;
+    place-items: center;
+    font-size: 2vmax;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: oblique;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color:darkred;
+  }
+
+@media only screen and (max-width: 768px){
+   .title{
+     font-size:7vmin;
+   }
+   .markdown_Header_Div a{
+     font-size: 4.5vmin;
+   }
+   .markdownInputTitle,.markdownPreviewTitle{
+     font-size: 5vmin;
+   }
+   .main{
+     grid-template-columns: 1fr;
+   }
+   .inputTextArea{
+     font-size: large;
+   }
+   .previewDarkDiv,.previewWhiteDiv{
+     font-size: large;
+   }
+   .footerDiv{
+     font-size: larger;
+   }
+}

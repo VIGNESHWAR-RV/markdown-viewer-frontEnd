@@ -1,0 +1,326 @@
+.outerMenuDiv{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 6;
+    display:grid;
+    grid-template-columns: 24% 76%;
+    transition: all 0.6s ease-in-out;
+    /* animation: form-fade-in 1s ease-in-out;  */
+}
+/* @keyframes form-fade-in {
+    from {
+      width:0;
+    }
+    to {
+     width: 100%;
+    }
+} */
+.innerMenuDiv{
+    background: darkred;
+    height:100vh;
+}
+.userDiv{
+    width:100%;
+    height:25vh;
+    border-bottom:3px solid black;
+}
+
+.userPic{
+   width:100%;
+   height:80%;
+   object-fit:contain;
+   background: black;
+}
+.userInfo{
+    width:94%;
+    margin: 0% 2% 0% 2%;
+    padding:1%;
+    border:none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2.75vmin;
+    font-style: oblique;
+    text-transform: uppercase;
+    border-radius: 25px;
+    background: black;
+    color:red;
+    overflow: hidden;
+    cursor: pointer;
+    transition:all 0.2s ease-in-out;
+}
+.userInfo:hover{
+    box-shadow:inset 0.1vw 0.1vw 0.2vw rgb(243, 201, 201),inset -0.1vw -0.1vw 0.2vw rgb(243, 201, 201);
+}
+.navDiv{
+    height:75vh;
+    width:100%;
+    display:grid;
+    grid-template-rows:3.6vmax;
+    align-content: flex-start;
+    overflow-y:scroll;
+}
+
+.navDiv button{
+    height: 3.6vmax;
+    width:100%;
+    background: transparent;
+    border:none;
+    font-size: 1.25vmax;
+    border-bottom: 2px solid black;
+    transition: all 0.4s ease-in-out;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    font-style: oblique;
+}
+.navDiv button:hover{
+    background:rgba(0, 0, 0,0.386);
+    font-size: 1.5vmax;
+}
+.savedTemplates{
+    height:3.6vmax;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content:start;
+    color:black;
+    border-bottom: 2px solid black;
+    transition: all 0.2s ease-in;
+    overflow: hidden;
+}
+
+.savedPagesInnerDiv{
+    height:3.6vmax;
+    border-bottom: 2px solid black;
+    display:grid;
+    grid-template-columns: 9fr 0.5fr; 
+}
+.savedPagesInnerDiv:hover{
+    background:rgba(0, 0, 0,0.386);
+    font-size: 1.5vmax;
+}
+.savedPagesInnerDiv>button{
+    border: none;
+    background:transparent;
+}
+.savedPagesInnerDiv>button:hover{
+    background:transparent;
+}
+.savedPagesInnerDiv>b{
+    height:3.6vmax;
+    display: grid;
+    place-items: center;
+    transition: all 0.2s ease-in-out;
+    font-size: 1.5vmax;
+}
+.myFiles{
+    height:18vmax;
+    display:grid;
+    align-content: flex-start;
+}
+.myFiles i{
+    align-self: center;
+    justify-self: center;
+}
+
+.emptyArea{
+    padding:1%;
+    font-size: xx-large;
+}
+.emptyArea>button{
+    border:none;
+    color:red;
+    background: transparent;
+    font-size: 1.5vmax;
+    cursor:pointer;
+}
+.emptyArea>button:hover{
+    text-shadow: 0.1vw 0.1vw 0.5vw red,-0.1vw -0.1vw 0.5vw red;
+}
+.userSection{
+    position: fixed;
+    width:100%;
+    height:100%;
+    color:red;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    transition: all 0.6s ease-in-out;
+}
+.settingSection{
+    width: 80%;
+    height:80%;
+    max-width: 70vw;
+    border:1px solid darkred;
+    border-radius: 3vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 35% 50% 15%;
+    overflow: hidden;
+}
+.infoSection{
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template-columns: 4fr 6fr;
+    align-items: center;
+    border-top-right-radius: 3vw;
+    border-top-left-radius: 3vw;
+    border-bottom:2px solid darkred;
+}
+.infoSection:hover{
+    box-shadow:inset 0.1vw 0.1vw 1vw red,-0.1vw -0.1vw 1vw red;
+}
+.profilePic{
+    width:100%;
+    display: grid;
+    place-items: center;
+}
+.profilePic>img{
+    width:12vmax;
+    height:12vmax;
+    border:2px solid darkred;
+    border-radius: 15vmax;
+}
+.profilePic>img:hover{
+    box-shadow: 0.1vw 0.1vw 0.5vw red,-0.1vw -0.1vw 0.5vw red;
+}
+.aboutSection{
+    font-size: 1.5vmax;
+}
+.aboutSection h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: oblique;
+    letter-spacing: 0.15vw;
+    text-shadow: 0.1vw 0.1vw 0.1vw darkred,-0.1vw -0.1vw 0.1vw darkred;
+}
+.aboutSection i {
+    letter-spacing: 0.05vw;
+    background: rgba(128, 128, 128, 0.404);
+    padding:1%;
+    border-radius: 10px;
+    
+}
+.pagesSection{
+    display:grid;
+    grid-template-rows: 1fr 9fr;
+    justify-content: stretch;
+}
+.pagesSection h2{
+    background: rgba(128, 128, 128, 0.493);
+    padding:1%;
+    padding-left: 5%;
+    font-size: 1.25vmax;
+    text-align: center;
+}
+.pages{
+    width:90%;
+    height:90%;
+    margin: 0 5% 5% 5%;
+    border:2px solid darkred;
+    border-radius: 2vw;
+    display:grid;
+    align-items: flex-start;
+    overflow: hidden;
+    overflow-y: auto;
+    background:darkred;
+}
+.pages button{
+    justify-self: stretch;
+    border:none;
+    height:3vmax;
+    background: transparent;
+    cursor:pointer;
+    font-size: 1.5vmax;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+}
+.pages button:hover{
+    padding-top:1vmax;
+    border-bottom:2px solid white;
+    background: rgba(0, 0, 0, 0.24);
+}
+.pages i {
+    justify-self: center;
+    align-self: center;
+    color:black;
+    font-size: larger;
+}
+.pages:hover{
+    box-shadow: 0.1vw 0.1vw 1vw red,-0.1vw -0.1vw 1vw red;
+}
+.signOutSection{
+    width:100%;
+    height:100%;
+    display:grid;
+    place-items: center;
+}
+.signOutSection button{
+    border:none;
+    background: transparent;
+    color:red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:2vmax;
+    font-style: oblique;
+    letter-spacing: 0.05vw;
+    border-radius: 1vw;
+    transition: all 0.3s ease-in-out;
+}
+.signOutSection button:hover{
+    padding:1%;
+    border:2px solid red;
+    box-shadow: 0.1vw 0.1vw 1vw red,-0.1vw -0.1vw 1vw red;
+
+}
+@media only screen and (max-width: 1100px){
+   
+    .outerMenuDiv{
+        grid-template-columns: 40% 60%;
+    }
+    .userInfo{
+        font-size: 2.25vmax;
+    }
+    .settingSection{
+        max-width: 80vw;   
+    }
+    
+    .navDiv button{
+        font-size: 2.75vmin;
+    }
+
+}
+@media only screen and (max-width: 768px){
+   
+    .outerMenuDiv{
+        grid-template-columns: 60% 40%;
+    }
+    .userInfo{
+        font-size: 2.5vmax;
+    }
+    .navDiv button{
+        font-size: 3.5vmin;
+        letter-spacing: 0.5px;
+    }
+    .navDiv button:hover{
+        font-size: 4vmin;
+    }
+    .infoSection{
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+    .profilePic>img{
+        width:10vmax;
+        height:10vmax;
+        border-radius: 10vmax;
+    }
+    .aboutSection{
+        font-size: 3vmin;
+    }
+    .pagesSection h2{
+        font-size: 4vmin;
+    }
+    .pages button{
+        height:10vmin;
+        font-size: 3vmin;
+    }
+}
