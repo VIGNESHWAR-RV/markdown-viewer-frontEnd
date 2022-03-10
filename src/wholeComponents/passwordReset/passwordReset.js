@@ -26,7 +26,7 @@ useEffect(()=>{
          headers:{"Content-Type":"application/json"},
          body:JSON.stringify({_id,token}) })
     .then((response)=>{
-          
+          toast.remove();
         if(response.status === 400){
             toast.error("couldnt verify the link,please try again!")
            return history.push("/loginAndSignUp");
