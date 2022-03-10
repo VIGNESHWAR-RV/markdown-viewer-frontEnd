@@ -3,6 +3,7 @@ import "./SignUp.css";
 import { useState } from "react";
 import { Input } from "../../individualComponents/inputFieldComponent/inputField";
 import { API } from "../../API/API"
+import toast from "react-hot-toast";
 
 export function SignUp({textColorStyle,toLoginPage}){
 
@@ -86,6 +87,7 @@ export function SignUp({textColorStyle,toLoginPage}){
         return alert("details are incorrect");
       }
 
+      toast.loading("please wait until signing up!")
      fetch(`${API}/signup`,
            {method:"POST",
            headers:{"Content-Type":"application/json"},
@@ -94,15 +96,17 @@ export function SignUp({textColorStyle,toLoginPage}){
                                  email:values.email,
                                  password:values.newPassword})})
      .then((response)=>{
+       toast.remove();
          if(response.status === 400){
              
              const message = async()=>{
                  const reply = await response.json();
-                 return alert(reply.message);
+                 return toast.error(reply.message);
              }
              message();
          }
-         else{
+         else if(response.status === 200){
+          toast.success("signup successfull!! , please login");
             return toLoginPage();
          }
      })

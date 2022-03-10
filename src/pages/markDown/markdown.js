@@ -4,6 +4,7 @@ import { API } from "../../API/API";
 import { useState,useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import toast from "react-hot-toast";
 
 export function MarkDown({inputValue,setInputValue,darkMode,updation,setUpdation}){
 
@@ -36,21 +37,25 @@ export function MarkDown({inputValue,setInputValue,darkMode,updation,setUpdation
         if(name === null){
           return;
         }
-
+           toast.loading("saving your markdown file");
            fetch(`${API}/users`,
            {method:"POST",
             headers:{"Content-Type":"application/json",token,id},
             body:JSON.stringify({name:name,content:inputValue})})
             .then((response)=>{
+              toast.remove();
                if(response.status === 400){
+                  toast.error("please login again to save your files")
                    sessionStorage.clear();
                    history.push("/loginAndSignUp");
                } 
                else{
+                      toast.success("Saved Successfully😎");
                       setSaved(true);
                       setUpdation(true);
                }})
        }else{
+        toast.error("please login to save your files😀")
          setSaved(false);
         history.push("/loginAndSignUp");
        }

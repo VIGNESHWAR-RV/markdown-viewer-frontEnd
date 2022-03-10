@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { API } from "../../API/API";
 import "./menuBar.css";
 import userBackground from "../../Images/userBackground.webp"; 
+import toast from "react-hot-toast";
 
 export function Menu({status,
                       closeMenu,
@@ -102,6 +103,7 @@ export function Menu({status,
         setLoggedIn(false); //to make sure menu gets updated
         setUserData();
         setUpdation(false);
+        toast.success("Successfully signed out")
     }
 
     return(

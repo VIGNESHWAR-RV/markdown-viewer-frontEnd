@@ -4,6 +4,7 @@ import { useState,useEffect } from "react";
 import { Input } from "../../individualComponents/inputFieldComponent/inputField";
 import { useHistory, useParams } from "react-router-dom";
 import { API } from "../../API/API";
+import toast from "react-hot-toast";
 
 export function PasswordReset(){
 
@@ -19,15 +20,18 @@ const [newPassword,setNewPassword] = useState(false);
 const [passwordUpdated,setPasswordUpdated] = useState(false);
 
 useEffect(()=>{
-
+   toast.loading("verifying user...");
     fetch(`${API}/password_Reset`,
         {method:"POST",
          headers:{"Content-Type":"application/json"},
          body:JSON.stringify({_id,token}) })
     .then((response)=>{
+          
         if(response.status === 400){
+            toast.error("couldnt verify the link,please try again!")
            return history.push("/loginAndSignUp");
-        }else{ 
+        }else if(response.status === 200){ 
+            toast.success("user verified");
             setNewPassword({status:true});
             // setTimeout(()=>{
 
@@ -77,19 +81,20 @@ const handleSubmit=(e)=>{
         return setPasswordUpdated(false);
       }
   
+    toast.loading("updating your password");
     fetch(`${API}/password_Reset`,
          {method:"PUT",
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify({_id,newPassword:newPassword.newPassword})})
     .then((response)=>{
+        toast.remove();
         setNewPassword({status:false})
         if(response.status === 400){
             
-              return;
+              return toast.error("couldn't update password!!!, please try again later");
         }
-        else{
-            // setTimeout(()=>{
-            // },1000);
+        else if(response.status === 200){
+                 toast.success("Successfully updated the passords");
             return setPasswordUpdated(true)
         }
     })

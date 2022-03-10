@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Input } from "../../individualComponents/inputFieldComponent/inputField";
 import { useHistory } from "react-router-dom";
 import { API } from "../../API/API";
+import toast from "react-hot-toast";
 
 export function Login({ textColorStyle,toSignUpPage,setShowForgotPassword,setLoggedIn}){
 
@@ -50,7 +51,7 @@ export function Login({ textColorStyle,toSignUpPage,setShowForgotPassword,setLog
         !strongPasswordRegex.test(values.password)){
       return setErrorMessage("invalid user credentials"); //showing error , if credentials not matched
     }
-    
+    toast.loading("logging you in");
 
 
      fetch(`${API}/login`,
@@ -58,13 +59,15 @@ export function Login({ textColorStyle,toSignUpPage,setShowForgotPassword,setLog
            headers:{"Content-Type":"application/json"},
             body:JSON.stringify(values)})
      .then((response) => {
+          toast.remove();
          if(response.status >= 400){
-    
+            toast.error("Invalid user credentials");
             return setErrorMessage("invalid credentials");
             
          }
          else{
              async function getToken(){
+                 toast.success("welcome back user💓");
                const reply = await response.json();
                sessionStorage.setItem("id",reply.id);
                sessionStorage.setItem("token",reply.token);

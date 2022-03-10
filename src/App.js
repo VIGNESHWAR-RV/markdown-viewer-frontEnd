@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import toast,{Toaster} from "react-hot-toast";
+
 
 import {Route,Switch} from "react-router-dom";
 import {Menu} from "./wholeComponents/MenuBar/menuBar";
@@ -18,17 +20,27 @@ function App() {
 
   const [updation,setUpdation] = useState(false); // to check for data stored by users;
 
-  const [darkMode,setDarkMode] = useState(true);  // for darkMode and light mode switch
+  const [darkMode,setDarkMode] = useState(false);  // for darkMode and light mode switch
 
   //for color change based on darkmode and light mode
   const backgroundStyle = {background:(darkMode)?"black":"rgb(243, 201, 201)"};
   const textColorStyle  = {color:(darkMode)?"black":"rgb(243, 201, 201)"}
 
+  const toastStyle = {style:{background:(darkMode)?"black":"rgb(243, 201, 201)",
+                             color:"darkred",
+                             fontSize:"2.5vmin",
+                             width:"minContent",
+                             height:"5vh",
+                             textTransform:"capitalize",
+                             padding:"1%",
+                             border:"0.5vw solid darkred",
+                             borderRadius:"5vmax"}}
 
   return (
     <div style={backgroundStyle} className="App">
       
-
+      {/* for toast messages */}
+      <Toaster position="bottom-right" toastOptions={toastStyle}/> 
       <button className='menuBar' onClick={()=>setMenuBar(!menuBar)}>
           📖
       </button>

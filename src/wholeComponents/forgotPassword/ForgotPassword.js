@@ -3,6 +3,7 @@ import "./ForgotPassword.css";
 import { useState } from "react";
 import { Input } from "../../individualComponents/inputFieldComponent/inputField";
  import { API } from "../../API/API";
+import toast from "react-hot-toast";
 
 export function ForgotPassword({setShowForgotPassword,textColorStyle}){
 
@@ -37,16 +38,19 @@ const handleSubmit = (e)=>{
     if(!(new RegExp(regExp.email).test(recoveryMail.recoveryEmail))){
         return setInvalidMail(true);
     }
-
+    toast.loading("sending request for password reset!")
     fetch(`${API}/forgot_Password`,
            {method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(recoveryMail)})
     .then((response)=>{
+        toast.remove();
         if(response.status === 400){
+            toast.error("please enter the mail associated with your account")
             setInvalidMail(true);
         }
-        else{
+        else if(response.status === 200){
+             toast.success("successfully sent link to the mail👍")
                setSentMessage(true);
                setTimeout(()=>{
                    let i = 0;
