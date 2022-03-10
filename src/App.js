@@ -20,7 +20,7 @@ function App() {
 
   const [updation,setUpdation] = useState(false); // to check for data stored by users;
 
-  const [darkMode,setDarkMode] = useState(false);  // for darkMode and light mode switch
+  const [darkMode,setDarkMode] = useState(true);  // for darkMode and light mode switch
 
   //for color change based on darkmode and light mode
   const backgroundStyle = {background:(darkMode)?"black":"rgb(243, 201, 201)"};
