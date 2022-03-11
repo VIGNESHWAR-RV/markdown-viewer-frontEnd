@@ -236,6 +236,7 @@
     font-family: 'Courier New', Courier, monospace;
     text-transform: uppercase;
     transition: all 0.2s ease-in-out;
+    cursor:pointer;
 }
 .pages button:hover{
     padding-top:1vmax;
@@ -267,6 +268,7 @@
     letter-spacing: 0.05vw;
     border-radius: 1vw;
     transition: all 0.3s ease-in-out;
+    cursor:pointer;
 }
 .signOutSection button:hover{
     padding:1%;
