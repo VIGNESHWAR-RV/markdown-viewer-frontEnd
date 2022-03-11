@@ -55,6 +55,7 @@
     color:darkred;
     border-radius: 2vmax;
     transition: all 0.6s ease-in-out;
+    cursor: pointer;
 }
 .loginSelection:hover,.signUpSelection:hover{
     color:black;

@@ -46,7 +46,7 @@ export function Menu({status,
     const [showSetting , setShowSetting] = useState(false);
     const settingMargin = {marginLeft:(showSetting)?"0%":"100%"};
     
-    const menuWidth = {width:(status)?"100%":"0"};
+    const menuWidth = {marginTop:(status)?"0":"-100%"};
 
     const [open,setOpen] = useState(false);
     const dropdownStyle = {height:(open)?"21.66vmax":"3.6vmax"};

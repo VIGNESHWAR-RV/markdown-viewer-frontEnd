@@ -74,6 +74,7 @@
     font-style: inherit;
     font-family: inherit;
     text-decoration: underline;
+    cursor: pointer;
     /* transform: scale(1.2); */
 }
 .signUpAnchorText{

@@ -59,6 +59,7 @@
     grid-template-rows:3.6vmax;
     align-content: flex-start;
     overflow-y:scroll;
+    cursor: pointer;
 }
 
 .navDiv button{
@@ -72,6 +73,7 @@
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
     font-style: oblique;
+    cursor: pointer;
 }
 .navDiv button:hover{
     background:rgba(0, 0, 0,0.386);
