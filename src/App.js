@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import toast,{Toaster} from "react-hot-toast";
+import {Toaster} from "react-hot-toast";
 
 
 import {Route,Switch} from "react-router-dom";

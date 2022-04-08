@@ -130,6 +130,7 @@ export function SignUp({textColorStyle,toLoginPage}){
               <b style={textColorStyle} className="signUpAnchorText">Already Have Account?</b> 
               <button style={textColorStyle} type="button" className="signUpAnchors" onClick={()=>toLoginPage()}>Login</button>
             </div>
+            <br/>
         </form>
         </div>
         </>

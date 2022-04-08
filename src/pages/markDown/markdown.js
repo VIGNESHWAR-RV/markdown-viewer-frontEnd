@@ -80,7 +80,7 @@ export function MarkDown({inputValue,setInputValue,darkMode,updation,setUpdation
                              <div>
                                {saved
                                 ?<button><a href="null" title="succesfully saved" onClick={(e)=>{e.preventDefault()}}>✌️</a></button>
-                                :<button><a href="null" title="save online" onClick={(e)=>{e.preventDefault();saveData()}}>🌐</a></button>
+                                :<button><a href="null" title="save online" onClick={(e)=>{e.preventDefault();saveData()}}>💾</a></button>
                                 }
                                  
                                  <button><a href="null" title="clear all" onClick={(e)=>{e.preventDefault();setInputValue("")}}>🧹</a></button>
