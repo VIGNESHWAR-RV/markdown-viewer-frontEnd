@@ -13,7 +13,7 @@ A simple Mark-Down Viewer with Save functionality
 * Theme Switch - Dark Mode & Light Mode.
 * Login , SignUp , password-reset flow inorder to enable file saving function.
 
-### _Sneak Peek_
+## _Sneak Peek_
 
 ![Home-Light Mode](https://raw.github.com/VIGNESHWAR-RV/markdown-viewer-frontEnd/main/screen%20shots/Screenshot%20(267).png)
 
