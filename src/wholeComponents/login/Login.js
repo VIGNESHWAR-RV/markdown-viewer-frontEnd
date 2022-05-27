@@ -39,20 +39,9 @@ export function Login({ textColorStyle,toSignUpPage,setShowForgotPassword,setLog
        setValues({...values,[e.target.name]:e.target.value})  //setting values of the field
    }
 
-   const handleSubmit = (e)=>{ //function to handle and perform submit event
-     e.preventDefault();  //preventing the reload on submitting the form
-
-     //checking pattern once again here , since HTML attributes can be changed
-     const userNameRegex = new RegExp("^[a-zA-Z0-9]{4,16}$");
-     const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{6,})");
-
-     if(!userNameRegex.test(values.userName) 
-        || 
-        !strongPasswordRegex.test(values.password)){
-      return setErrorMessage("invalid user credentials"); //showing error , if credentials not matched
-    }
+   function fetching(values){
+        
     toast.loading("logging you in");
-
 
      fetch(`${API}/login`,
            {method:"POST",
@@ -62,8 +51,7 @@ export function Login({ textColorStyle,toSignUpPage,setShowForgotPassword,setLog
           toast.remove();
          if(response.status >= 400){
             toast.error("Invalid user credentials");
-            return setErrorMessage("invalid credentials");
-            
+            return setErrorMessage("invalid credentials");   
          }
          else{
              async function getToken(){
@@ -80,11 +68,29 @@ export function Login({ textColorStyle,toSignUpPage,setShowForgotPassword,setLog
            
          }
         })
-  
+      return;
+    }
+   
+
+   const handleSubmit = (e)=>{ //function to handle and perform submit event
+     e.preventDefault();  //preventing the reload on submitting the form
+
+     //checking pattern once again here , since HTML attributes can be changed
+     const userNameRegex = new RegExp("^[a-zA-Z0-9]{4,16}$");
+     const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{6,})");
+
+     if(!userNameRegex.test(values.userName) 
+        || 
+        !strongPasswordRegex.test(values.password)){
+      return setErrorMessage("invalid user credentials"); //showing error , if credentials not matched
+    }
+
+      fetching({userName:values.userName,password:values.password});
+   }
+
     //can use formData to get the data from inputs too
     //  const data = new FormData(e.target)
     //   console.log(Object.fromEntries(data.entries()));
-   }
 
 //    useEffect(()=>{
 //    const token = sessionStorage.getItem("token");
@@ -109,6 +115,7 @@ export function Login({ textColorStyle,toSignUpPage,setShowForgotPassword,setLog
             </button>
             <div className="loginAnchorsDiv">
                 <button style={textColorStyle} type="button" className="loginAnchors" onClick={()=>setShowForgotPassword(true)}>Forgot Password?</button>
+                <button style={textColorStyle} type="button" className="loginAnchors" onClick={()=>fetching({userName:"Demo01",password:"Demomarkdown@123"})} >Demo Login</button>
                 <button style={textColorStyle} type="button" className="loginAnchors" onClick={()=>toSignUpPage()}>New User?</button>
             </div>
         </form>
